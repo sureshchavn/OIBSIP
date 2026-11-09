@@ -1,0 +1,1288 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="web_standard" name="shell-type" />
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Manrope:wght@200..800&amp;display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+		rel="stylesheet" />
+	<style>
+		@layer base {
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				overscroll-behavior: none;
+			}
+
+			main> :first-child {
+				margin-top: 0 !important;
+			}
+
+			main> :last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+
+		::-webkit-scrollbar {
+			display: none;
+		}
+	</style>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script id="tailwind-config">
+		tailwind.config = {
+			darkMode: "class",
+			theme: {
+				extend: {
+					colors: {
+						"inverse-surface": "#e3e2e3",
+						"inverse-primary": "#5d5f5d",
+						"on-background": "#e3e2e3",
+						"on-error-container": "#ffdad6",
+						"tertiary-fixed": "#dfe3e1",
+						"outline-variant": "#444845",
+						"on-tertiary": "#2c3130",
+						"secondary-container": "#454a4f",
+						"surface-container-high": "#292a2b",
+						secondary: "#c3c7cd",
+						"primary-fixed-dim": "#c6c7c4",
+						"surface-container-low": "#1b1c1d",
+						"on-secondary-fixed-variant": "#43474c",
+						error: "#ffb4ab",
+						"on-surface-variant": "#c4c7c3",
+						"on-error": "#690005",
+						"secondary-fixed-dim": "#c3c7cd",
+						outline: "#8e928e",
+						"tertiary-fixed-dim": "#c3c7c5",
+						"on-tertiary-fixed-variant": "#434846",
+						"inverse-on-surface": "#303031",
+						"surface-container-lowest": "#0d0e0f",
+						"secondary-fixed": "#dfe3e9",
+						"surface-bright": "#39393a",
+						"on-secondary-container": "#b4b9bf",
+						"tertiary-container": "#dfe3e1",
+						"on-tertiary-fixed": "#171d1b",
+						"on-tertiary-container": "#606564",
+						"on-primary-container": "#636563",
+						"on-primary-fixed-variant": "#454745",
+						"surface-container-highest": "#343536",
+						"on-primary-fixed": "#1a1c1a",
+						"surface-variant": "#343536",
+						"surface-tint": "#c6c7c4",
+						"primary-fixed": "#e2e3e0",
+						"surface-dim": "#121314",
+						surface: "#121314",
+						primary: "#ffffff",
+						"on-surface": "#e3e2e3",
+						tertiary: "#ffffff",
+						"surface-container": "#1f2021",
+						"on-secondary-fixed": "#171c20",
+						"on-secondary": "#2c3136",
+						"on-primary": "#2f312f",
+						"primary-container": "#e2e3e0",
+						background: "#121314",
+						"error-container": "#93000a",
+					},
+					borderRadius: {
+						DEFAULT: "0.125rem",
+						lg: "0.25rem",
+						xl: "0.5rem",
+						full: "0.75rem",
+					},
+					spacing: {
+						gutter: "1.5rem",
+						margin: "1.25rem",
+						"space-xs": "0.25rem",
+						"space-md": "1rem",
+						"gutter-desktop": "2rem",
+						"space-sm": "0.5rem",
+						"space-xl": "3rem",
+						"margin-desktop": "5rem",
+						"space-lg": "1.5rem",
+						"margin-tablet": "2.5rem",
+					},
+					fontFamily: {
+						"body-sm": ["DM Sans"],
+						"body-md": ["DM Sans"],
+						"label-md": ["DM Sans"],
+						"body-lg": ["DM Sans"],
+						"label-lg": ["DM Sans"],
+						"headline-xl-mobile": ["Manrope"],
+						"headline-md": ["Manrope"],
+						"headline-sm": ["Manrope"],
+						"label-sm": ["DM Sans"],
+						"headline-lg-mobile": ["Manrope"],
+						"headline-xl": ["Manrope"],
+						"headline-lg": ["Manrope"],
+					},
+					fontSize: {
+						"body-sm": [
+							"14px",
+							{
+								lineHeight: "20px",
+								letterSpacing: "0.005em",
+								fontWeight: "400",
+							},
+						],
+						"body-md": [
+							"16px",
+							{ lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+						],
+						"label-md": [
+							"12px",
+							{
+								lineHeight: "16px",
+								letterSpacing: "0.1em",
+								fontWeight: "500",
+							},
+						],
+						"body-lg": [
+							"18px",
+							{
+								lineHeight: "28px",
+								letterSpacing: "-0.005em",
+								fontWeight: "400",
+							},
+						],
+						"label-lg": [
+							"14px",
+							{
+								lineHeight: "18px",
+								letterSpacing: "0.08em",
+								fontWeight: "500",
+							},
+						],
+						"headline-xl-mobile": [
+							"40px",
+							{
+								lineHeight: "48px",
+								letterSpacing: "-0.02em",
+								fontWeight: "600",
+							},
+						],
+						"headline-md": [
+							"32px",
+							{
+								lineHeight: "40px",
+								letterSpacing: "-0.015em",
+								fontWeight: "500",
+							},
+						],
+						"headline-sm": [
+							"24px",
+							{
+								lineHeight: "32px",
+								letterSpacing: "-0.01em",
+								fontWeight: "500",
+							},
+						],
+						"label-sm": [
+							"10px",
+							{
+								lineHeight: "14px",
+								letterSpacing: "0.12em",
+								fontWeight: "600",
+							},
+						],
+						"headline-lg-mobile": [
+							"32px",
+							{
+								lineHeight: "40px",
+								letterSpacing: "-0.02em",
+								fontWeight: "600",
+							},
+						],
+						"headline-xl": [
+							"64px",
+							{
+								lineHeight: "72px",
+								letterSpacing: "-0.03em",
+								fontWeight: "600",
+							},
+						],
+						"headline-lg": [
+							"48px",
+							{
+								lineHeight: "56px",
+								letterSpacing: "-0.025em",
+								fontWeight: "600",
+							},
+						],
+					},
+				},
+			},
+		};
+	</script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+	<header
+		class="fixed top-0 left-0 right-0 z-50 w-full bg-surface-container-lowest/80 backdrop-blur-2xl border-b border-surface-container">
+		<div
+			class="h-20 w-full px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-lg">
+			<div class="flex items-center gap-space-sm">
+				<a href="#home" class="brand-logo">
+					<img src="images/Logo.jpg" alt="VoltDrive Logo">
+					<span>VOLTDRIVE</span>
+				</a>
+			</div>
+
+			<nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold">
+				<a aria-current="page" class="uppercase tracking-wider transition-colors text-primary font-semibold"
+					data-path="home" href="#home">Home</a>
+				<a
+					class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+					data-path="about" href="#philosophy">About</a>
+				<a
+					class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+					data-path="vehicles" href="#fleet">Vehicles</a>
+					<a
+					class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+					data-path="technology" href="#technology">Technology</a>
+					<a
+					class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+					data-path="charging" href="#charging">Charging</a>
+			</nav>
+			<button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+				aria-controls="mobile-navigation">
+				<span></span><span></span><span></span>
+			</button>
+			<div class="flex items-center gap-space-md">
+				<a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs border border-outline-variant hover:border-outline bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider rounded transition-all"
+					data-path="vehicles" href="#fleet">Explore Models</a>
+				<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+					<span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+				</div>
+			</div>
+		</div>
+		<nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation">
+			<a href="#home">Home</a>
+			<a href="#philosophy">About</a>
+			<a href="#fleet">Vehicles</a>
+			<a href="#technology">Technology</a>
+			<a href="#charging">Charging</a>
+			
+		</nav>
+	</header>
+	<main id="home" class="w-full pt-20 bg-surface min-h-screen">
+		<div class="flex flex-col w-full text-on-surface">
+			<!-- 1. HERO SECTION -->
+			<section
+				class="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden bg-surface-container-lowest">
+				<!-- Hero Background Image Bleed with Gradient Scrims -->
+				<div class="absolute inset-0 z-0">
+					<img alt="VoltDrive Flagship Electric Mobility - Front Profile on Scenic Pacific Rim Coastline"
+						class="w-full h-full object-cover object-center filter brightness-[0.82] contrast-[1.05]"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAY5H308IRbhpLLev4QyOi4ZGsMzXbLiPqBmPToXlsjSQj-aCicSa8QnQE09V0fOKiLsye2OarUdqtwk1RGieBL993TXRAYdplXvuRRa8RqXHaDP8CP4jrBoKMeklvCxbP8brK2vfxrxpgVV8vO8t4oB9EmXYEwbKRITHIf86VmSy9VMbVx0iA2PeRBPGJHh0fWycZ8TF9mBsco4jJV_bSwaasf45GflcDxWJlJVY" />
+					<!-- Refined Multi-layer Scrim Vignette -->
+					<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+					<div
+						class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent">
+					</div>
+					<div
+						class="absolute inset-0 bg-radial-at-c from-transparent via-transparent to-surface-container-lowest/80">
+					</div>
+				</div>
+				<!-- Top Floating Hero Content -->
+				<div
+					class="relative z-10 w-full px-margin md:px-margin-tablet lg:px-margin-desktop pt-16 md:pt-24 max-w-5xl">
+					<!-- Tag / Badge -->
+					<div
+						class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md mb-6">
+						<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+						<span class="font-label-md text-label-md tracking-widest uppercase text-secondary">Flagship
+							Electric Mobility</span>
+					</div>
+					<!-- Grand Editorial Title -->
+					<h1
+						class="font-headline-xl text-headline-xl text-primary font-medium tracking-tight mb-6 leading-[1.08] max-w-4xl">
+						Power Meets <br />
+						<span class="text-secondary-fixed">Elegance.</span>
+					</h1>
+					<!-- Supporting Statement -->
+					<p class="font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed mb-10">
+						Experience the pure synthesis of intelligent technology, sculpted
+						aerodynamics, and unyielding electric performance crafted for the
+						avant-garde.
+					</p>
+					<!-- CTAs -->
+					<div class="flex flex-wrap items-center gap-space-md">
+						<a class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider rounded-lg transition-transform duration-200 hover:scale-[1.02] shadow-xl"
+							href="#fleet">
+							Discover the Range
+						</a>
+						<a class="inline-flex items-center justify-center px-8 py-3.5 bg-surface-container-high/60 hover:bg-surface-container-high text-primary font-label-lg text-label-lg uppercase tracking-wider rounded-lg backdrop-blur-md transition-all"
+							href="#technology">
+							Explore Technology
+						</a>
+					</div>
+				</div>
+				<!-- Hero Lower Telemetry Strip -->
+				<div class="relative z-10 w-full mt-16 md:mt-24">
+					<div
+						class="w-full bg-surface-container-lowest/85 backdrop-blur-xl px-margin md:px-margin-tablet lg:px-margin-desktop py-6">
+						<div
+							class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch justify-between gap-6 md:gap-12">
+							<!-- Metric 1 -->
+							<div class="flex-1 flex flex-col justify-center">
+								<div class="flex items-baseline gap-2">
+									<span
+										class="font-headline-lg text-headline-lg font-semibold text-primary tracking-tight">600+</span>
+									<span class="font-label-lg text-label-lg text-secondary font-medium">KM</span>
+								</div>
+								<p class="font-label-md text-label-md uppercase tracking-wider text-outline">
+									Target EPA Range
+								</p>
+							</div>
+							<!-- Divider -->
+							<div class="hidden md:block w-px bg-outline-variant/30 self-stretch"></div>
+							<!-- Metric 2 -->
+							<div class="flex-1 flex flex-col justify-center">
+								<div class="flex items-baseline gap-2">
+									<span
+										class="font-headline-lg text-headline-lg font-semibold text-primary tracking-tight">3.2s</span>
+									<span class="font-label-lg text-label-lg text-secondary font-medium">0-100</span>
+								</div>
+								<p class="font-label-md text-label-md uppercase tracking-wider text-outline">
+									0–100 KM/H Acceleration
+								</p>
+							</div>
+							<!-- Divider -->
+							<div class="hidden md:block w-px bg-outline-variant/30 self-stretch"></div>
+							<!-- Metric 3 -->
+							<div class="flex-1 flex flex-col justify-center">
+								<div class="flex items-baseline gap-2">
+									<span
+										class="font-headline-lg text-headline-lg font-semibold text-primary tracking-tight">25</span>
+									<span class="font-label-lg text-label-lg text-secondary font-medium">MIN</span>
+								</div>
+								<p class="font-label-md text-label-md uppercase tracking-wider text-outline">
+									10% to 80% Ultra-Fast Charge
+								</p>
+							</div>
+							<!-- Micro Scroll Cue -->
+							<div class="hidden lg:flex items-center justify-end flex-initial pl-6">
+								<a class="group flex flex-col items-center gap-2 text-outline hover:text-primary transition-colors"
+									href="#philosophy">
+									<span class="font-label-sm text-label-sm uppercase tracking-widest">Scroll</span>
+									<span
+										class="material-symbols-outlined text-base animate-bounce">arrow_downward</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 2. BRAND INTRODUCTION & PHILOSOPHY -->
+			<section class="w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface"
+				id="philosophy">
+				<div class="max-w-7xl mx-auto">
+					<!-- Overline Tag -->
+					<div class="flex items-center gap-3 mb-6">
+						<span class="h-px w-8 bg-outline"></span>
+						<span class="font-label-md text-label-md uppercase tracking-widest text-secondary">The
+							Philosophy</span>
+					</div>
+					<!-- Split Layout Headline & Manifesto -->
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-baseline mb-16 md:mb-24">
+						<h2
+							class="lg:col-span-7 font-headline-lg text-headline-lg md:text-5xl font-medium tracking-tight text-primary leading-tight">
+							Not Just a Vehicle. <br class="hidden sm:inline" />
+							<span class="text-on-surface-variant">A New Perspective.</span>
+						</h2>
+						<div class="lg:col-span-5 flex flex-col gap-4">
+							<p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+								VoltDrive was born from a singular conviction: grand touring
+								in the sustainable era should demand no compromise on silence,
+								speed, or sensorial luxury.
+							</p>
+							<p class="font-body-md text-body-md text-outline leading-relaxed">
+								By merging aerospace-grade lightweight architecture with
+								unyielding silicon-carbide electric propulsion, every curve
+								serves an aerodynamic purpose and every cabin appointment
+								redefines intuitive serenity.
+							</p>
+						</div>
+					</div>
+					<!-- Architectural Feature Metrics Cards -->
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+						<div
+							class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="flex justify-between items-start mb-10">
+								<span class="font-label-sm text-label-sm tracking-widest uppercase text-outline">Aero
+									Dynamics</span>
+								<span
+									class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">air</span>
+							</div>
+							<div>
+								<div class="font-headline-md text-headline-md font-semibold text-primary mb-2">
+									0.208 Cd
+								</div>
+								<p class="font-body-sm text-body-sm text-on-surface-variant">
+									Class-leading drag coefficient engineered through active
+									aerodynamic splitters and sculpted underbody floor venturis.
+								</p>
+							</div>
+						</div>
+						<div
+							class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="flex justify-between items-start mb-10">
+								<span
+									class="font-label-sm text-label-sm tracking-widest uppercase text-outline">Powertrain</span>
+								<span
+									class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">bolt</span>
+							</div>
+							<div>
+								<div class="font-headline-md text-headline-md font-semibold text-primary mb-2">
+									900V SiC
+								</div>
+								<p class="font-body-sm text-body-sm text-on-surface-variant">
+									High-voltage Silicon Carbide architecture ensuring near-zero
+									thermal degradation and uninterrupted continuous power
+									output.
+								</p>
+							</div>
+						</div>
+						<div
+							class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="flex justify-between items-start mb-10">
+								<span
+									class="font-label-sm text-label-sm tracking-widest uppercase text-outline">Sustainable
+									Luxury</span>
+								<span
+									class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">spa</span>
+							</div>
+							<div>
+								<div class="font-headline-md text-headline-md font-semibold text-primary mb-2">
+									100% Recycled
+								</div>
+								<p class="font-body-sm text-body-sm text-on-surface-variant">
+									Cruelty-free vegan synthetic leathers, circular aluminium
+									substrates, and sustainably farmed Nordic open-pore veneers.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 3. FEATURED VEHICLES SECTION (THE FLEET) -->
+			<section
+				class="w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface-container-lowest"
+				id="fleet">
+				<div class="max-w-7xl mx-auto">
+					<!-- Section Header with Filter Controls -->
+					<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="h-px w-8 bg-outline"></span>
+								<span class="font-label-md text-label-md uppercase tracking-widest text-secondary">The
+									Fleet</span>
+							</div>
+							<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">
+								Engineered Without Compromise.
+							</h2>
+							<p class="font-body-md text-body-md text-secondary mt-2">
+								Tailored configurations for discerning grand touring
+								enthusiasts.
+							</p>
+						</div>
+						<!-- Filter Tabs -->
+						<div class="inline-flex p-1 rounded-lg bg-surface-container-low gap-1" id="modelFilterTabs">
+							<button
+								class="filter-btn active px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary transition-all"
+								type="button">
+								All Models
+							</button>
+							<button
+								class="filter-btn px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all"
+								type="button">
+								Sedan
+							</button>
+							<button
+								class="filter-btn px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all"
+								type="button">
+								Coupe
+							</button>
+							<button
+								class="filter-btn px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all"
+								type="button">
+								SUV
+							</button>
+						</div>
+					</div>
+					<!-- Models Grid -->
+					<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+						<!-- CARD 1: VoltDrive X1 -->
+						<div class="vehicle-card flex flex-col bg-surface-container-low rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300"
+							data-category="Sedan">
+							<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+								<img alt="VoltDrive X1 Executive Electric Sedan parked at coastal overlook"
+									class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAY5H308IRbhpLLev4QyOi4ZGsMzXbLiPqBmPToXlsjSQj-aCicSa8QnQE09V0fOKiLsye2OarUdqtwk1RGieBL993TXRAYdplXvuRRa8RqXHaDP8CP4jrBoKMeklvCxbP8brK2vfxrxpgVV8vO8t4oB9EmXYEwbKRITHIf86VmSy9VMbVx0iA2PeRBPGJHh0fWycZ8TF9mBsco4jJV_bSwaasf45GflcDxWJlJVY" />
+								<span
+									class="absolute top-4 left-4 px-3 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded text-primary font-label-sm text-label-sm uppercase tracking-widest">Sedan</span>
+							</div>
+							<div class="p-8 flex flex-col flex-1 justify-between">
+								<div>
+									<div class="flex items-baseline justify-between mb-2">
+										<h3 class="font-headline-sm text-headline-sm font-semibold text-primary">
+											VoltDrive X1
+										</h3>
+										<span class="font-label-lg text-label-lg font-medium text-secondary">From
+											$89,500</span>
+									</div>
+									<p class="font-label-md text-label-md text-outline uppercase tracking-wider mb-4">
+										Luxury Executive Sedan
+									</p>
+									<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">
+										The benchmark of executive electric touring. Unrivaled
+										aerodynamic efficiency meets whisper-quiet luxury.
+									</p>
+									<!-- Technical Specs Strip -->
+									<div class="grid grid-cols-2 gap-4 py-4 bg-surface-container rounded-lg px-4 mb-6">
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Range
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												620
+												<span class="font-body-sm text-body-sm text-secondary">km</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												0–100 km/h
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												3.2
+												<span class="font-body-sm text-body-sm text-secondary">s</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Drive
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												Dual
+												<span class="font-body-sm text-body-sm text-secondary">AWD</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Power
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												680
+												<span class="font-body-sm text-body-sm text-secondary">hp</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="inline-flex items-center justify-between w-full px-5 py-3 rounded bg-surface-container-high hover:bg-primary text-primary hover:text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all"
+									href="#">
+									<span>Explore Model</span>
+									<span class="material-symbols-outlined text-base">arrow_forward</span>
+								</a>
+							</div>
+						</div>
+						<!-- CARD 2: VoltDrive GT -->
+						<div class="vehicle-card flex flex-col bg-surface-container-low rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300"
+							data-category="Coupe">
+							<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+								<img alt="VoltDrive GT High-Performance Electric Coupe Rear View in Dark Studio Lighting"
+									class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeW53XgaP0uSjg4rw2uH6Zxhv4BMqmw2VI3hE4gbhKjzaFTOwnT5zzrV54hc5o6cKanBpR-sznxkUTHjqecZcd-GgBW9l50r0R9VsWKvknj9hSj0vTFEHW_pw5t9yPqiSJtO0G8q1whKjFwKHB16p7_zu7G7Hi0tTuIKiFCopqFikRnwYbxdKZuFbFLPa4MzS-R3POaBVWVMO_90rx48y1UdOU0Q2KmWbcEr7OFv8" />
+								<span
+									class="absolute top-4 left-4 px-3 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded text-primary font-label-sm text-label-sm uppercase tracking-widest">Coupe</span>
+							</div>
+							<div class="p-8 flex flex-col flex-1 justify-between">
+								<div>
+									<div class="flex items-baseline justify-between mb-2">
+										<h3 class="font-headline-sm text-headline-sm font-semibold text-primary">
+											VoltDrive GT
+										</h3>
+										<span class="font-label-lg text-label-lg font-medium text-secondary">From
+											$124,000</span>
+									</div>
+									<p class="font-label-md text-label-md text-outline uppercase tracking-wider mb-4">
+										Electric Performance Coupe
+									</p>
+									<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">
+										Unbridled track-born power and razor-sharp torque
+										vectoring in a sculpted wide-body grand tourer silhouette.
+									</p>
+									<!-- Technical Specs Strip -->
+									<div class="grid grid-cols-2 gap-4 py-4 bg-surface-container rounded-lg px-4 mb-6">
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Range
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												580
+												<span class="font-body-sm text-body-sm text-secondary">km</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												0–100 km/h
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												2.6
+												<span class="font-body-sm text-body-sm text-secondary">s</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Drive
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												Tri
+												<span class="font-body-sm text-body-sm text-secondary">AWD</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Power
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												1,020
+												<span class="font-body-sm text-body-sm text-secondary">hp</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="inline-flex items-center justify-between w-full px-5 py-3 rounded bg-surface-container-high hover:bg-primary text-primary hover:text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all"
+									href="#">
+									<span>Explore Model</span>
+									<span class="material-symbols-outlined text-base">arrow_forward</span>
+								</a>
+							</div>
+						</div>
+						<!-- CARD 3: VoltDrive SUV -->
+						<div class="vehicle-card flex flex-col bg-surface-container-low rounded-lg overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300"
+							data-category="SUV">
+							<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+								<img alt="VoltDrive SUV Luxury Family Electric Crossover Profile outside Modern Architectural Villa"
+									class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkuvia1ihnq42j9GNRzk0vIdqFRiyRXLeOcFFJnF-LB0V35Q1i7stv6jmV0_4WyrTT9cRYkto6e4yV670Bi3EDzcKYU0HbJmKUAUNcLAQjf7DpYSMipoYy5XJFBMOHkwV6e8nPDmef4pXYaLTqWNDWYD07fVL7K7nEU8Z6vGom_2ybEtZNhj3DVSdSD6u-2H5CH8qFuIBctgUtsxCRgDKA70mIDauKtMQ_ibg56kU" />
+								<span
+									class="absolute top-4 left-4 px-3 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded text-primary font-label-sm text-label-sm uppercase tracking-widest">SUV</span>
+							</div>
+							<div class="p-8 flex flex-col flex-1 justify-between">
+								<div>
+									<div class="flex items-baseline justify-between mb-2">
+										<h3 class="font-headline-sm text-headline-sm font-semibold text-primary">
+											VoltDrive SUV
+										</h3>
+										<span class="font-label-lg text-label-lg font-medium text-secondary">From
+											$98,000</span>
+									</div>
+									<p class="font-label-md text-label-md text-outline uppercase tracking-wider mb-4">
+										Premium Electric Touring SUV
+									</p>
+									<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">
+										Spacious architectural cabin comfort meets adaptive air
+										suspension and commanding all-terrain electric mastery.
+									</p>
+									<!-- Technical Specs Strip -->
+									<div class="grid grid-cols-2 gap-4 py-4 bg-surface-container rounded-lg px-4 mb-6">
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Range
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												560
+												<span class="font-body-sm text-body-sm text-secondary">km</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												0–100 km/h
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												3.8
+												<span class="font-body-sm text-body-sm text-secondary">s</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Drive
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												Dual
+												<span class="font-body-sm text-body-sm text-secondary">AWD</span>
+											</div>
+										</div>
+										<div>
+											<div class="font-label-sm text-label-sm uppercase text-outline">
+												Power
+											</div>
+											<div class="font-headline-sm text-headline-sm font-medium text-primary">
+												610
+												<span class="font-body-sm text-body-sm text-secondary">hp</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="inline-flex items-center justify-between w-full px-5 py-3 rounded bg-surface-container-high hover:bg-primary text-primary hover:text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all"
+									href="#">
+									<span>Explore Model</span>
+									<span class="material-symbols-outlined text-base">arrow_forward</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 4. PERFORMANCE & TECHNOLOGY GRID -->
+			<section class="w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface"
+				id="technology">
+				<div class="max-w-7xl mx-auto">
+					<div class="flex items-center gap-3 mb-4">
+						<span class="h-px w-8 bg-outline"></span>
+						<span class="font-label-md text-label-md uppercase tracking-widest text-secondary">Proprietary
+							Innovations</span>
+					</div>
+					<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+						<div>
+							<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">
+								Intelligent Engineering
+							</h2>
+							<p class="font-body-md text-body-md text-secondary mt-2">
+								Proprietary innovations propelling automotive physics forward.
+							</p>
+						</div>
+					</div>
+					<!-- 2x2 Bento Module Grid -->
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<!-- Module 1: Battery Architecture -->
+						<div
+							class="bg-surface-container-low p-8 md:p-10 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="mb-8">
+								<div class="flex items-center justify-between mb-6">
+									<span
+										class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary">
+										<span class="material-symbols-outlined">battery_charging_full</span>
+									</span>
+									<span
+										class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">118
+										kWh Usable</span>
+								</div>
+								<h3 class="font-headline-sm text-headline-sm font-semibold text-primary mb-3">
+									Intelligent Battery Technology
+								</h3>
+								<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+									Next-gen cell-to-chassis structural battery pack with active
+									micro-channel thermal conditioning. Provides ultra-low
+									center of gravity and unmatched torsional rigidity.
+								</p>
+							</div>
+							<!-- Technical SVG Visualization -->
+							<div class="w-full pt-4">
+								<div
+									class="flex justify-between items-center text-label-sm font-label-sm uppercase tracking-wider text-outline mb-2">
+									<span>Thermal Efficiency</span>
+									<span class="text-primary font-medium">98.4%</span>
+								</div>
+								<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+									<div class="w-[98%] h-full bg-primary rounded-full"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Module 2: Autonomous Driving -->
+						<div
+							class="bg-surface-container-low p-8 md:p-10 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="mb-8">
+								<div class="flex items-center justify-between mb-6">
+									<span
+										class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary">
+										<span class="material-symbols-outlined">radar</span>
+									</span>
+									<span
+										class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Level
+										3 Ready</span>
+								</div>
+								<h3 class="font-headline-sm text-headline-sm font-semibold text-primary mb-3">
+									Advanced Driver Assistance
+								</h3>
+								<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+									360° sensor fusion powered by 12 ultra-HD cameras,
+									solid-state LiDAR, and dual redundant neural compute chips
+									orchestrating 500 trillion operations per second.
+								</p>
+							</div>
+							<!-- Technical SVG Visualization -->
+							<div class="w-full pt-4">
+								<div
+									class="flex justify-between items-center text-label-sm font-label-sm uppercase tracking-wider text-outline mb-2">
+									<span>Perception Latency</span>
+									<span class="text-primary font-medium">&lt; 1.2 ms</span>
+								</div>
+								<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+									<div class="w-[94%] h-full bg-primary rounded-full"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Module 3: Ultra-Fast Charging -->
+						<div
+							class="bg-surface-container-low p-8 md:p-10 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="mb-8">
+								<div class="flex items-center justify-between mb-6">
+									<span
+										class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary">
+										<span class="material-symbols-outlined">flash_on</span>
+									</span>
+									<span
+										class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">350
+										kW DC Peak</span>
+								</div>
+								<h3 class="font-headline-sm text-headline-sm font-semibold text-primary mb-3">
+									Ultra-Fast 900V Charging
+								</h3>
+								<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+									Up to 350 kW peak DC fast charging adding 300 km of
+									real-world highway range in just 15 minutes of dwell time,
+									backed by intelligent battery pack pre-heating.
+								</p>
+							</div>
+							<!-- Technical SVG Visualization -->
+							<div class="w-full pt-4">
+								<div
+									class="flex justify-between items-center text-label-sm font-label-sm uppercase tracking-wider text-outline mb-2">
+									<span>Peak Power Delivery</span>
+									<span class="text-primary font-medium">350 kW</span>
+								</div>
+								<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+									<div class="w-[90%] h-full bg-primary rounded-full"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Module 4: Connected OS -->
+						<div
+							class="bg-surface-container-low p-8 md:p-10 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+							<div class="mb-8">
+								<div class="flex items-center justify-between mb-6">
+									<span
+										class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary">
+										<span class="material-symbols-outlined">terminal</span>
+									</span>
+									<span
+										class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">VoltOS
+										Architecture</span>
+								</div>
+								<h3 class="font-headline-sm text-headline-sm font-semibold text-primary mb-3">
+									Smart Connectivity &amp; OS
+								</h3>
+								<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+									VoltOS provides an intuitive zero-latency fluid interface
+									with biometric driver profiles, encrypted smartphone keyless
+									ignition, and regular over-the-air firmware upgrades.
+								</p>
+							</div>
+							<!-- Technical SVG Visualization -->
+							<div class="w-full pt-4">
+								<div
+									class="flex justify-between items-center text-label-sm font-label-sm uppercase tracking-wider text-outline mb-2">
+									<span>OTA Telemetry Update Rate</span>
+									<span class="text-primary font-medium">Continuous</span>
+								</div>
+								<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+									<div class="w-full h-full bg-primary rounded-full"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 5. CHARGING EXPERIENCE SECTION -->
+			<section
+				class="w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface-container-lowest"
+				id="charging">
+				<div class="max-w-7xl mx-auto">
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+						<!-- Left: Cinematic Station Showcase Image -->
+						<div class="lg:col-span-7 relative rounded-lg overflow-hidden bg-surface-container shadow-2xl">
+							<img alt="VoltDrive High-Power Ion Charging Hub Station with Electric Vehicle Docked at Night"
+								class="w-full aspect-[4/3] object-cover object-center filter brightness-[0.95]"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7PisTxgnnddXOTO21Yfwoeaf1aT0yunmDZJnHxkrQD3aLskQKFF-HjbwggDm_Zyw6Ksn5C6gOQ8n-PrXg0osITaQZNvVVKaJGTYXps3WlzpZRYExMb17aHtJB_wf82afqLx8w6quEBS-5ApYWwYTLlPcd8uFnNIrWS-ndLVPWcFCOwPj9Q9esdf6ov3eQy3aXNSugiHVD29Y9kZm2D-VkLHpA9bTAbIofD8qe7Yw" />
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+							</div>
+							<div
+								class="absolute bottom-6 left-6 right-6 flex items-center justify-between p-4 rounded bg-surface-container-lowest/90 backdrop-blur-md">
+								<div>
+									<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+										Network Protocol
+									</p>
+									<p class="font-body-md text-body-md text-primary font-medium">
+										Plug &amp; Charge Automated Handshake
+									</p>
+								</div>
+								<span
+									class="px-3 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">350
+									kW Active</span>
+							</div>
+						</div>
+						<!-- Right: Text Content & Charging Ecosystem Details -->
+						<div class="lg:col-span-5 flex flex-col justify-center">
+							<div class="flex items-center gap-3 mb-4">
+								<span class="h-px w-8 bg-outline"></span>
+								<span
+									class="font-label-md text-label-md uppercase tracking-widest text-secondary">Seamless
+									Infrastructure</span>
+							</div>
+							<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight mb-6">
+								Less Waiting. <br />
+								<span class="text-secondary-fixed">More Exploring.</span>
+							</h2>
+							<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">
+								Recharging your VoltDrive is effortlessly transparent. Simply
+								arrive at any VoltDrive SuperCharge hub—our proprietary cloud
+								handshake authenticates your vehicle and initiates peak
+								kilowatt transfer instantly without apps or physical card
+								swipes.
+							</p>
+							<!-- Charging Specifications Strip -->
+							<div class="flex flex-col gap-4 mb-8">
+								<div class="flex items-start gap-4 p-4 rounded bg-surface-container-low">
+									<span class="material-symbols-outlined text-secondary mt-0.5">home</span>
+									<div>
+										<h4
+											class="font-headline-sm text-headline-sm text-sm font-semibold text-primary">
+											Home Wallbox
+										</h4>
+										<p class="font-body-sm text-body-sm text-outline">
+											11 kW AC intelligent bidirectional charging. Full
+											replenishment overnight during off-peak utility tariffs.
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-4 p-4 rounded bg-surface-container-low">
+									<span class="material-symbols-outlined text-secondary mt-0.5">ev_station</span>
+									<div>
+										<h4
+											class="font-headline-sm text-headline-sm text-sm font-semibold text-primary">
+											High-Power Hub (DC)
+										</h4>
+										<p class="font-body-sm text-body-sm text-outline">
+											Up to 350 kW liquid-cooled dispensation delivering 10%
+											to 80% state of charge in 25 minutes.
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-4 p-4 rounded bg-surface-container-low">
+									<span class="material-symbols-outlined text-secondary mt-0.5">thermostat</span>
+									<div>
+										<h4
+											class="font-headline-sm text-headline-sm text-sm font-semibold text-primary">
+											Route Pre-Conditioning
+										</h4>
+										<p class="font-body-sm text-body-sm text-outline">
+											Onboard navigation automatically conditions the battery
+											thermal state prior to station arrival for peak draw.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div>
+								<a class="inline-flex items-center gap-3 px-8 py-3.5 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider rounded transition-all hover:bg-secondary-fixed"
+									href="#">
+									<span>Discover Charging Network</span>
+									<span class="material-symbols-outlined text-base">explore</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 6. OWNER TESTIMONIALS SECTION -->
+			<section class="w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface">
+				<div class="max-w-7xl mx-auto">
+					<div class="flex items-center gap-3 mb-4">
+						<span class="h-px w-8 bg-outline"></span>
+						<span class="font-label-md text-label-md uppercase tracking-widest text-secondary">Ownership
+							Experience</span>
+					</div>
+					<div class="mb-16">
+						<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">
+							Verified Perspectives
+						</h2>
+						<p class="font-body-md text-body-md text-secondary mt-2">
+							Reflections from industry critics and performance purists.
+						</p>
+					</div>
+					<!-- Testimonial Grid -->
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						<div class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between">
+							<div class="mb-6">
+								<div class="flex text-primary mb-4 gap-1">
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+								</div>
+								<p class="font-body-md text-body-md text-primary leading-relaxed italic">
+									"The instant torque combined with the eerily silent,
+									vibration-free cabin transforms a 400-mile journey into pure
+									serenity."
+								</p>
+							</div>
+							<div class="pt-6 border-t border-outline-variant/20">
+								<h5 class="font-label-lg text-label-lg font-medium text-primary">
+									Julian Vance
+								</h5>
+								<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+									VoltDrive GT Owner • Zurich
+								</p>
+							</div>
+						</div>
+						<div class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between">
+							<div class="mb-6">
+								<div class="flex text-primary mb-4 gap-1">
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+								</div>
+								<p class="font-body-md text-body-md text-primary leading-relaxed italic">
+									"VoltDrive has achieved what legacy manufacturers couldn't:
+									uncompromising build precision with intuitive modern
+									software."
+								</p>
+							</div>
+							<div class="pt-6 border-t border-outline-variant/20">
+								<h5 class="font-label-lg text-label-lg font-medium text-primary">
+									Elena Rostova
+								</h5>
+								<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+									Automotive Design Critic • London
+								</p>
+							</div>
+						</div>
+						<div class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between">
+							<div class="mb-6">
+								<div class="flex text-primary mb-4 gap-1">
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+									<span class="material-symbols-outlined text-sm"
+										style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+								</div>
+								<p class="font-body-md text-body-md text-primary leading-relaxed italic">
+									"With child seats in the back and winter conditions outside,
+									the SUV delivers effortless poise, safety, and immense
+									real-world range."
+								</p>
+							</div>
+							<div class="pt-6 border-t border-outline-variant/20">
+								<h5 class="font-label-lg text-label-lg font-medium text-primary">
+									Marcus Thorne
+								</h5>
+								<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+									VoltDrive SUV Owner • Vancouver
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 7. FINAL CALL-TO-ACTION (ATMOSPHERIC BANNER) -->
+			<section
+				class="relative w-full py-space-xl md:py-32 px-margin md:px-margin-tablet lg:px-margin-desktop bg-surface-container-lowest overflow-hidden">
+				<!-- Subtle Ambient Radial Glow Behind Text -->
+				<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+					<div class="w-[600px] h-[600px] rounded-full bg-secondary-container blur-[140px]"></div>
+				</div>
+				<div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container mb-6">
+						<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Reserve Your
+							Build</span>
+					</div>
+					<h2
+						class="font-headline-xl text-headline-xl md:text-6xl font-medium tracking-tight text-primary mb-6">
+						The Future Is Yours to Drive.
+					</h2>
+					<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-10 leading-relaxed">
+						Experience electric mobility without compromise. Schedule a
+						private demonstration drive or configure your vehicle online
+						today.
+					</p>
+					<div class="flex flex-wrap items-center justify-center gap-space-md mb-16">
+						<a class="px-8 py-4 bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider rounded-lg transition-transform duration-200 hover:scale-[1.02] shadow-xl"
+							href="#fleet">
+							Explore VoltDrive
+						</a>
+						<button
+							class="px-8 py-4 bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg uppercase tracking-wider rounded-lg transition-all"
+							type="button">
+							Book Private Test Drive
+						</button>
+					</div>
+					<!-- Reassurance Badges -->
+					<div
+						class="w-full pt-10 border-t border-surface-container flex flex-wrap items-center justify-center gap-8 md:gap-16 text-outline">
+						<div class="flex items-center gap-2.5">
+							<span class="material-symbols-outlined text-secondary">bolt</span>
+							<span class="font-label-md text-label-md uppercase tracking-wider">Complimentary 3-Year
+								Charging</span>
+						</div>
+						<div class="flex items-center gap-2.5">
+							<span class="material-symbols-outlined text-secondary">flight_takeoff</span>
+							<span class="font-label-md text-label-md uppercase tracking-wider">White-Glove Home
+								Delivery</span>
+						</div>
+						<div class="flex items-center gap-2.5">
+							<span class="material-symbols-outlined text-secondary">verified_user</span>
+							<span class="font-label-md text-label-md uppercase tracking-wider">8-Year / 160,000 KM
+								Battery Warranty</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Filter Interaction Script -->
+	</main>
+	<script src="script.js" defer></script>
+	<footer
+		class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-xl text-on-surface-variant">
+		<div class="w-full px-margin md:px-margin-tablet lg:px-margin-desktop">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-gutter-desktop mb-space-xl">
+				<div class="lg:col-span-2 flex flex-col items-start">
+					<div class="flex items-center gap-space-sm mb-space-sm">
+						<img alt="VoltDrive Logo" class="h-8 w-auto object-contain"
+							src="https://lh3.googleusercontent.com/aida/AEtjO1VJ92-WNEpSncSIq2wh04ilzCHK9GCbmy0CLE_vE3O26V96VRZ8mMToonDi7xk7b7t5K5c_jDW-o9i4QW10ZOLIniBTwUhRKJib-CZYDovxAhA-ZeUtaW_Pd-ATFC0ASWS0qkuLMqAISReTgphWr9RVn5pZpt4zzMcksOb416yepIGXneNa6fpY8tJDJ8XUn7RPPgP7ysvdw0ysMC4k0PzkybZZAjDJpwtWL5OyNWR9" /><span
+							class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary font-semibold">VoltDrive</span>
+					</div>
+					<p class="font-body-sm text-body-sm text-outline mb-space-lg">
+						Power Meets Elegance
+					</p>
+					<div class="w-full max-w-sm">
+						<p class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-space-xs">
+							Stay Informed
+						</p>
+						<div
+							class="flex items-center border border-outline-variant rounded bg-surface-container-low p-space-xs focus-within:border-outline">
+							<input
+								class="w-full bg-transparent px-space-xs text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none"
+								placeholder="Enter your email" type="email" /><button
+								class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded hover:bg-secondary-fixed transition-colors"
+								type="button">
+								Join
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-space-sm">
+					<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">
+						Vehicles
+					</h4>
+					<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							VoltDrive X1
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							VoltDrive GT
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							VoltDrive SUV
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Future Concepts
+						</li>
+					</ul>
+				</div>
+				<div class="flex flex-col gap-space-sm">
+					<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">
+						Technology
+					</h4>
+					<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Battery Architecture
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Autonomous Suite
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Ultrafast Hubs
+						</li>
+					</ul>
+				</div>
+				<div class="flex flex-col gap-space-sm">
+					<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">
+						Company
+					</h4>
+					<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							About VoltDrive
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Press
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Careers
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Investor Relations
+						</li>
+					</ul>
+				</div>
+				<div class="flex flex-col gap-space-sm">
+					<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">
+						Legal
+					</h4>
+					<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Privacy Policy
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Terms of Service
+						</li>
+						<li class="hover:text-primary transition-colors cursor-pointer">
+							Environmental Disclosure
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div
+				class="pt-space-lg border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md text-outline font-label-md text-label-md">
+				<p>© 2025 VoltDrive Motors Inc. All rights reserved.</p>
+				<p class="tracking-widest uppercase">Precision Engineered Luxury</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

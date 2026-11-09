@@ -1,0 +1,67 @@
+/* Additional responsive and interaction styles for the Stitch portfolio */
+:root { scroll-behavior: smooth; }
+html { scroll-padding-top: 96px; }
+body { overflow-x: hidden; }
+.mobile-menu-button {
+  display: none;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #1d1f27;
+  color: #e1e2ec;
+  border-radius: 10px;
+  padding: 9px 13px;
+  font: 600 18px "JetBrains Mono", monospace;
+  cursor: pointer;
+}
+.portfolio-nav { display: none; }
+.form-status {
+  min-height: 20px;
+  color: #4cd7f6;
+  font: 500 13px "JetBrains Mono", monospace;
+  text-align: center;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #4cd7f6;
+  outline-offset: 3px;
+}
+@media (min-width: 1280px) {
+  .portfolio-nav { display: flex; }
+  .mobile-menu-button { display: none !important; }
+}
+@media (max-width: 1279px) {
+  header > div { position: relative; }
+  .mobile-menu-button { display: inline-flex; align-items: center; justify-content: center; }
+  .portfolio-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 24px;
+    right: 24px;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    background: rgba(25,27,35,.98);
+    box-shadow: 0 18px 45px rgba(0,0,0,.4);
+  }
+  .portfolio-nav.is-open { display: flex; }
+  .portfolio-nav a { display: block; padding: 12px 14px; border-radius: 8px; }
+  header > div > div:last-child { display: none; }
+}
+@media (max-width: 640px) {
+  html { scroll-padding-top: 80px; }
+  header > div { height: 68px !important; padding-left: 16px !important; padding-right: 16px !important; }
+  .portfolio-nav { left: 16px; right: 16px; }
+  main { padding-top: 68px !important; }
+  #contact form { padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

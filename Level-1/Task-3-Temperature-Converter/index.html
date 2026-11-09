@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tempora is a simple temperature converter for Celsius, Fahrenheit and Kelvin.">
+    <title>Tempora | Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-icon">🌡️</span>
+            <span>Tempora</span>
+        </a>
+        <span class="header-label">Temperature Converter</span>
+    </header>
+
+    <main class="container">
+        <section class="converter-card">
+            <div class="card-heading">
+                <div class="heading-icon">🌡️</div>
+                <h1>Temperature Converter</h1>
+                <p>Convert temperatures quickly and accurately.</p>
+            </div>
+
+            <form id="converterForm" novalidate>
+                <div class="input-group">
+                    <label for="temperature">Enter Temperature</label>
+                    <input
+                        type="number"
+                        id="temperature"
+                        placeholder="e.g. 25"
+                        step="any"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="units-row">
+                    <div class="input-group">
+                        <label for="fromUnit">From</label>
+                        <select id="fromUnit">
+                            <option value="C">Celsius (°C)</option>
+                            <option value="F">Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="swapBtn"
+                        class="swap-btn"
+                        aria-label="Swap temperature units"
+                        title="Swap units"
+                    >⇄</button>
+
+                    <div class="input-group">
+                        <label for="toUnit">To</label>
+                        <select id="toUnit">
+                            <option value="F" selected>Fahrenheit (°F)</option>
+                            <option value="C">Celsius (°C)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button type="submit" class="convert-btn">
+                        Convert Temperature
+                    </button>
+                    <button type="button" id="clearBtn" class="clear-btn">
+                        Clear
+                    </button>
+                </div>
+            </form>
+
+            <div id="message" class="message" role="alert" aria-live="polite"></div>
+
+            <div class="result-box" id="resultBox" aria-live="polite">
+                <span class="result-label">Conversion Result</span>
+                <p id="resultValue">Your result will appear here</p>
+                <span id="resultDescription" class="result-description">
+                    Enter a value and click Convert
+                </span>
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Quick Examples</h2>
+            <p class="examples-subtitle">Some common temperature conversions</p>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <span>25°C</span>
+                    <span class="example-arrow">→</span>
+                    <strong>77°F</strong>
+                </div>
+                <div class="example-card">
+                    <span>32°F</span>
+                    <span class="example-arrow">→</span>
+                    <strong>0°C</strong>
+                </div>
+                <div class="example-card">
+                    <span>0°C</span>
+                    <span class="example-arrow">→</span>
+                    <strong>273.15 K</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Developed by <strong>Suresh Chavan</strong></p>
+        <p>© <span id="currentYear"></span> Tempora. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
